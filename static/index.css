@@ -1,1 +1,114 @@
+/* Google Font */
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
 
+.title {
+    font-size: 30px;
+    font-style: italic;
+    margin: 0px auto 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title_string:hover {
+    color: #2478FF;
+    cursor: pointer;
+}
+
+.search{
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: 250px 100px;
+}
+
+#search_entry {
+    font-size: 15px;
+    border-color: rgba(216, 216, 216, 0.2); /* 모서리 색상 연하게 설정 */
+    border-radius: 10px;
+    outline-color: rgba(216, 216, 216, 0.4); /* 선택 시 색상 변화 */
+}
+
+#search_button {
+    font-size: 20px;
+    color: white;
+    background-color: #2478FF;
+    margin-left: 10px;
+    border-color: transparent; /* 모서리 색상 투명하게 설정 */
+    border-radius: 10px;
+}
+
+#search_button:hover {
+    background-color: #0B47B8; /* 현재 상태에서의 배경색 */
+    cursor: pointer; /* 현재 상태에서 cursor 모양 변경 */
+}
+
+/* ! */
+
+.card {
+    width: 300px;
+    margin: 0px 10px 20px 10px;
+    background-color: #2478FF;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+}
+
+.card:hover {
+    background-color: #0B47B8; /* 현재 상태에서의 배경색 */
+    cursor: pointer; /* 현재 상태에서 cursor 모양 변경 */
+}
+
+.cards {
+    color: white;
+    display: inline-flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card_body {
+    padding: 0px 20px 0px 20px;
+}
+
+.rank{
+    font-size: 40px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.card_title{
+    font-size: 20px;
+    font-style: italic;
+}
+
+.vote_average {
+    color: yellow;
+    font-size: 15px;
+}
+
+.overview {
+    font-size: 15px;
+}
+
+.poster_path {
+    border-radius: 20px;
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid black;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.putter {
+    font-size: 15px;
+    margin: 30px auto 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold; /* 글씨를 더 굵게 설정 */
+}
