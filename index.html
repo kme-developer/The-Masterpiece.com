@@ -3,31 +3,37 @@
 <head>
     <meta charset="utf-8">
     <!-- index.css -->
-    <link rel="stylesheet" type="text/css" href="static/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!-- index.js -->
+    <script src="src/index.js" type="module"></script>
+    <!-- detail.js -->
+    <script src="./src/detail.js" type="module"></script>
+    <!-- googlefont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <!-- website title -->
     <title>The Masterpiece.com - KME</title>
 </head>
 
-<body onload="load()">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-
+<body>
     <div class="title">
-        <h1 class="title_string" onclick="load()">The Masterpiece.com</h1>
+        <h1 class="title_string" id="home">The Masterpiece.com</h1>
         <div class="search">
             <input type="search" id="search_entry" placeholder="enter movie name" 
                 autocomplete="off" autofocus style="text-align: left; text-indent: 10px;">
-            <button id="search_button" onclick="search()" type="button">search</button>
+            <button id="search_button" type="button">search</button>
         </div>
     </div>
-        <div class="cards" id="cards">
+        <div class="cards" id="cards"> 
+        <!-- 여기에 생성된 HTML 요소가 붙습니다. -->
     </div>
-    <div class="footer">
+    <div class="putter">
         <hr class="divider">
         Copyright. KME All rights reserved.
     </div>
 
-    <script type="text/javascript" src="static/index.js"></script>
-    <script type="text/javascript" src="static/search.js"></script>
+    <!-- / -->
+    <div id="modal"></div>
+    <div id="modal_container"></div>
 </body>
