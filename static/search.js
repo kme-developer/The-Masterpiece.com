@@ -1,4 +1,4 @@
-function search() {
+export function search() {
     const options = {
         method: 'GET',
         headers: {
@@ -11,6 +11,7 @@ function search() {
         .then(response => response.json())
         .then(data => {
             let rows = data['results']
+            console.log(rows)
 
             let rank_array = [] // <-----
 
@@ -21,11 +22,13 @@ function search() {
             // HTML에서 ID가 "search_entry"인 요소의 값을 가져와서 'search_string' 변수에 할당합니다.
             // 이는 사용자가 입력한 검색어를 나타냅니다.
             let search_string = document.querySelector("#search_entry").value
+            console.log('search_string => ' + search_string)
             // 검색어를 소문자로 변환하여 'lower_search' 변수에 할당합니다.
             let lower_search = search_string.toLowerCase()
+            console.log('lower_search => ' + lower_search)
             
             // 'rows' 배열을 반복하여 각 영화 제목을 소문자로 변환하여 'array_for_filtering' 배열에 추가합니다.
-            for (i = 0; i < rows.length; i++) {
+            for (let i = 0; i < rows.length; i++) {
                 array_for_filtering.push(rows[i]['title'].toLowerCase())
             }
             
@@ -54,20 +57,21 @@ function search() {
                 let lower_title = title.toLowerCase()
                 let poster_path = "https://image.tmdb.org/t/p/w300" + movie['poster_path']
                 let vote_average = movie['vote_average']
-                let overview = movie['overview']
 
                 rank_array.push(id) // <-----
                 let rank = rank_array.indexOf(id) + 1 // <-----
 
-                let temp =`<div class="card" onclick = 'alert("${id}")'>
-                            <img src="${poster_path}" class="poster_path">
-                                <div class="card_body">
-                                    <p class="rank"> ${rank} </p>
-                                    <h4 class="card_title">${title}</h4>
-                                    <p class="vote_average">★ ${vote_average}</p>
-                                    <p class="overview">${overview}</p>
-                                </div>
-                            </div>`
+                let temp = 
+                `<div class="card" id="${id}" onclick='alert("${id}")'>
+                    <img class="poster_path" id="${id}" src="${poster_path}">
+                    <div class="card_body" id="${id}">
+                        <div class="rank_and_vote_average" id="${id}" >
+                            <p class="rank" id="${id}">${rank}</p>
+                            <p class="vote_average" id="${id}">★ ${vote_average}</p>
+                        </div>
+                        <h4 class="card_title" id="${id}">${title}</h4>
+                    </div>
+                </div>`
 
                 // 현재 영화 제목이 검색어를 포함하는 경우에만 다음 내용을 실행합니다.
                 if (lower_title.includes(lower_search)) {
