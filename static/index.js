@@ -1,3 +1,16 @@
+import { search } from "./search.js";
+import { detail_modal } from "./detail.js";
+
+const cards = document.querySelector(".cards");
+
+document.addEventListener("DOMContentLoaded", load);
+
+const home = document.getElementById("home");
+home.addEventListener("click", load);
+
+const search_button = document.getElementById("search_button");
+search_button.addEventListener("click", search);
+
 function load() {
     const options = {
         method: 'GET',
@@ -23,7 +36,7 @@ function load() {
                 let title = movie['title']
                 let poster_path = "https://image.tmdb.org/t/p/w300" + movie['poster_path']
                 let vote_average = movie['vote_average']
-                let overview = movie['overview']
+                // let overview = movie['overview']
                 
                 // 영화의 ID를 'rank_array' 배열에 추가하고,
                 rank_array.push(id)
@@ -35,21 +48,28 @@ function load() {
                 // 그리고 + 1을 수행하여 rank 변수에는 '1'이 할당됩니다. 이는 결국 해당 영화의 순위를 나타냅니다.
                 let rank = rank_array.indexOf(id) + 1
 
-                let temp =`<div class="card" onclick = 'alert("${id}")'>
-                            <img src="${poster_path}" class="poster_path">
-                                <div class="card_body">
-                                    <p class="rank"> ${rank} </p>
-                                    <h4 class="card_title">${title}</h4>
-                                    <p class="vote_average">★ ${vote_average}</p>
-                                    <p class="overview">${overview}</p>
-                                </div>
-                            </div>`
+                let temp = 
+                `<div class="card" id="${id}" onclick='alert("${id}")'>
+                    <img class="poster_path" id="${id}" src="${poster_path}">
+                    <div class="card_body" id="${id}">
+                        <div class="rank_and_vote_average" id="${id}" >
+                            <p class="rank" id="${id}">${rank}</p>
+                            <p class="vote_average" id="${id}">★ ${vote_average}</p>
+                        </div>
+                        <h4 class="card_title" id="${id}">${title}</h4>
+                    </div>
+                </div>`
+                
+                // 'cards'를 'click'하면 'detail_modal' 함수가 실행됩니다.
+                cards.addEventListener("click", detail_modal)
+
                 // "cards"라는 ID를 가진 요소의 끝에 생성한 HTML 요소를 삽입합니다.
                 document.getElementById("cards").insertAdjacentHTML('beforeend', temp);
             })
         }
     )
 
+// 'Enter'를 치면, 검색이 가능하게 만드는 구문입니다.
 document.getElementById("search_entry")
     .addEventListener("keyup", function (event) {
         if (event.code === 'Enter') {
