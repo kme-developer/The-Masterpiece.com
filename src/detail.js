@@ -32,8 +32,8 @@ export function detail_modal({target}) {
                 </div>
                 <div class="review_box" id="${movie.id}">
                     <div class="user_entry">
-                        <input id="user_id" placeholder="user ID" autocomplete="off">
-                        <input id="user_pw" placeholder="user PW" autocomplete="off">
+                        <input id="user_id" placeholder="user ID" autocomplete="off"></input>
+                        <input id="user_pw" placeholder="user PW" autocomplete="off"></input>
                         <input id="user_comment" placeholder="leave a comment" autocomplete="off" autofocus></input>
                     </div>
                     <div class="crud_buttons">
