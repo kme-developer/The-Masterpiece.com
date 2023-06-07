@@ -114,6 +114,7 @@
     border-radius: 5px;
 
     outline-color: rgba(216, 216, 216, 0.8);
+    width: 230px;
 }
 
 #user_pw {
@@ -121,6 +122,7 @@
     border-radius: 5px;
 
     outline-color: rgba(216, 216, 216, 0.8);
+    width: 230px;
 }
 
 #user_comment {
@@ -128,6 +130,7 @@
     border-radius: 5px;
 
     outline-color: rgba(216, 216, 216, 0.8);
+    width: 230px;
 }
 
 .save {
@@ -138,7 +141,8 @@
 
     background-color: black;
     border-color: transparent;
-    border-radius: 10px;
+    border-radius: 15px;
+    width: 70px;
 }
 
 .save:hover {
@@ -154,7 +158,8 @@
 
     background-color: black;
     border-color: transparent;
-    border-radius: 10px;
+    border-radius: 15px;
+    width: 70px;
 }
 
 .edit:hover {
@@ -170,7 +175,8 @@
 
     background-color: black;
     border-color: transparent;
-    border-radius: 10px;
+    border-radius: 15px;
+    width: 70px;
 }
 
 .delete:hover {
@@ -179,7 +185,7 @@
 }
 
 .modal_divider {
-    width: 200px;
+    width: 250px;
 
     margin-bottom: 20px;
 
